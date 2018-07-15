@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>SignIn | </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width ,initial-scale=1 ,minimum-scale=1 maximum-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="css/profile.css" rel="stylesheet" type="text/css" >
+    </head>
+    <body>
+        <div class="main">
+            <div id="name"></div>
+            <div id="email"></div>
+            <button id="logout_btn">Logout</button>
+        </div>
+    </body>
+
+    <script>
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return null;
+        }
+        function delete_cookie( name ) {
+            document.cookie = name + '=; path=/;';
+        }
+
+        if(getCookie('x-auth')===null){
+            window.location.href = '/';
+        }
+
+        $.ajax({
+            type: "GET",
+            url: "/api/auth/token",
+            dataType: "json",
+            beforeSend: function(xhr){xhr.setRequestHeader('x-auth',getCookie('x-auth'));},
+            contentType : "application/json",
+            success: function(user) {
+                console.log(user);
+                $("#name").html(user.name);
+                $("#email").html(user.email);
+            }
+        })
+        $('#logout_btn').on('click' , function(){
+            $.ajax({
+                type: "DELETE",
+                url: "/api/logout/remove_token",
+                dataType: "json",
+                beforeSend: function(xhr){xhr.setRequestHeader('x-auth',getCookie('x-auth'));},
+                contentType : "application/json",
+                success: function(user){
+                    delete_cookie("x-auth")
+                    window.location.href="/";          
+                }
+            });
+        });
+        
+        
+    </script>
+</html>
+

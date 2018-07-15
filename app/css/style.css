@@ -1,0 +1,108 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+
+
+/* Full-width inputs */
+input[type=text], input[type=password],input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #0b64cd;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor:pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 25%;
+    border-radius: 50%;
+    background-color: #ccc
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+.form-login,.form-signup, .regForm{
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    background: white;
+    border: 1px  solid #ccc;
+}
+a{
+  margin:20px;
+  color: #0b64cd;
+  text-decoration: none;
+}
+.required:after {
+  color: red;
+  content:" *";
+}
+.modal{
+  display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* The Close Button */
+.closeBtn {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin:auto;
+    margin-top: 20%;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* Change styles on extra small screens */
+@media screen and (max-width: 450px) {
+    .form-login,.form-signup{
+      width: 90%;
+    }
+    .modal-content{
+      width: 80%;
+      margin-top:40%;
+    }
+}

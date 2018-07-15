@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html lang="en" dir="ltr">
+<head>
+  <title>SignIn | </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width ,initial-scale=1 ,minimum-scale=1 maximum-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+  <div class="">
+      <form class="form-login">
+        <div class="imgcontainer">
+          <img src="images/avatar.png" alt="Avatar" class="avatar">
+        </div>
+        <div class="container">
+          <label for="email" class="required"><b>Email</b></label>
+          <input type="text" id="email" placeholder="email" required>
+          <br>
+          <br>
+
+          <label for="password" class="required"><b>Password</b></label>
+          <input type="password" id="password" placeholder="Password" required>
+          <br>
+          <br>
+
+          <button type="submit" id="login_button" onclick="logIn()">Login</button>
+
+
+        <div style="text-align:center">
+          <a id="forgetPass" href="#">Forgot password</a>
+          <br>
+          <br>
+          don't have an account!
+          <a href="signup">Sign Up</a>
+
+        </div>
+        </div>
+      </form>
+
+    <div id="forgetPassModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+        <form class="" action="index.html" method="post">
+          <input type="email" name="email" placeholder="Enter your email">
+          <button type="button" name="sendLinkBtn">Send reset link</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript" src="scripts/login.js"></script>
+
+</body>
+</html>

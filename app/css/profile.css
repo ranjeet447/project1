@@ -1,0 +1,25 @@
+.main{
+    height: 40px;
+    padding: 40px;
+    text-align: center;
+}
+
+#name,#email{
+    padding: 20px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #0b64cd;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor:pointer;
+    width: 80px;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
